@@ -1,31 +1,52 @@
 $(function () {
-    let clickcount = 0
-    //複数を配列の中にオブジェクトで保存する
+
+
+    //保存関数
+    function saveStorage(key, hage) {
+        localStorage.setItem(key, JSON.stringify(hage));
+    }
+
+    //取得関数
+    function getStorage(key) {
+        let json_data = localStorage.getItem(key)
+        const re_json_date = JSON.parse(json_data)
+        return re_json_date
+    }
+
+    //削除関数
+    function removeStorage() {
+        localStorage.clear()
+    }
+
+    //追加関数
+    function add() {
+        let title = $(".title").val()
+        let text_area = $(".text_area").val()
+        add_memo(title, text_area)
+        saveMemo(title, text_area)
+    }
+
+    //追加メモ、あんまりわからん
+    function add_memo(title, text_area) {
+      
+        $(".title").val('')
+        $(".text_area").val('')
+    }
+
+    //保存メモ
+    memo_all = []
+    function saveMemo(title, text_area) {
+        let testob = {
+            title: title,
+            text_area: text_area
+        };
+        memo_all.push(testob)
+        saveStorage("memoOb", memo_all)
+    }
+
+
     $('.set_local').on("click", function () {
-        if (clickcount < 3) {
-            clickcount = clickcount + 1
-            const title = $(".title").val()
-            const text_area = $(".text_area").val()
-            const date = $("#date").val()
-
-            let data =
-            {
-                title: title,
-                text_area: text_area,
-                date: date
-            }
-
-
-            const data_json = JSON.stringify(data)
-            localStorage.setItem(clickcount + "着", data_json)
-
-            $(".title").val('')
-            $(".text_area").val('')
-            $("#date").val('')
-        } else {
-            clickcount = 0 
-        }
-
+        add()
     })
 
 

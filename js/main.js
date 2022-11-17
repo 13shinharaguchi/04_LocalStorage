@@ -12,7 +12,7 @@ $(function () {
     var add = function () {
         var ttl = $(".memoForm #title").val();
         bdy = $(".memoForm #body").val();
-        addMemo(ttl, bdy);
+        // addMemo(ttl, bdy);
         saveMemo(ttl, bdy);
     };
 
@@ -38,6 +38,7 @@ $(function () {
             bdy: bdy
         };
         memoArr.push(memoObj);
+        console.log(memoArr)
         saveStorage(storageKey, memoArr);
     }
 
@@ -48,7 +49,7 @@ $(function () {
 
     var readMemo = function () {
         var memoObjs = getStorage(storageKey);
-        if (memoObjs.length == null) return;
+        if (memoObjs.length === null) return;
         for (var i = 0; i < memoObjs.length; i++) {
             var memoObj = memoObjs[i];
             var ttl = memoObj.ttl;
