@@ -1,18 +1,36 @@
-.input_area{
+.input_area {
     margin-bottom: 40px;
 }
 
-#memoArea{
+#memoArea {
     display: flex;
-    justify-self:center;
+    justify-self: center;
     align-items: center;
     flex-direction: column;
 }
 
-#title_test{
+#title_test {
     width: 150px;
 }
 
-#text_area_test{
+#text_area_test {
     width: 150px;
+}
+
+.register_area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column
+}
+
+.button_area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column
+}
+
+.Select_button {
+    display: flex;
 }
