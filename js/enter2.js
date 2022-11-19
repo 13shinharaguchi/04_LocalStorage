@@ -27,6 +27,7 @@ $(function () {
         //入力を白紙にする
         $('.title').val('')
         $('.text_area').val('')
+        display()
     })
 
     //削除ボタン(一旦すべて削除する)
@@ -35,7 +36,7 @@ $(function () {
     })
 
 
-    function display() {
+    function display_all() {
         //ローカルストレージの中身を変数に格納し、元の形に戻す
         let shin_json = localStorage.getItem(storageKey)
         let shin = JSON.parse(shin_json)
@@ -46,19 +47,58 @@ $(function () {
             let title_test = shin2.title
             let text_test = shin2.text
 
-           
-            var template =
-                '<input type="text" id="title_test" class="form-control" value="aa" />' +
-                '<textarea class="form-control" id="text_area_test">%s</textarea>'
-            //文字列になってしまうため、変数に置き換える
-            template = template.replace('aa', title_test).replace('%s', text_test);
 
-             //htmlに追加する
+            // var template =
+            //     '<div class=card>' +
+            //     '<input type="text" calss="title_test_i" class="form-control" value="aa" />' +
+            //     '<textarea class="form-control" calss="text_area_test_i">%s</textarea>' +
+            //     '</div>'
+            var template =
+                '<div class=card_wrapper>' +
+                '<div class=cara_title> %title <div>' +
+                '<div class=card_text> %text </div>' +
+                '</div>'
+            //文字列になってしまうため、変数に置き換える
+            template = template.replace('%title', title_test).replace('%text', text_test);
+
+            //htmlに追加する
             $("#memoArea").append(template);
         }
     }
+    function display() {
+        //ローカルストレージの中身を変数に格納し、元の形に戻す
+        let shin_json = localStorage.getItem(storageKey)
+        let shin = JSON.parse(shin_json)
+
+        //もどした配列の中身の個数ぶん回す
+
+        let shin2 = shin[shin.length - 1]
+        let title_test = shin2.title
+        let text_test = shin2.text
+
+
+        // var template =
+        //     '<div class=card>' +
+        //     '<input type="text" calss="title_test_i" class="form-control" value="aa" />' +
+        //     '<textarea class="form-control" calss="text_area_test_i">%s</textarea>' +
+        //     '</div>'
+        var template =
+            '<div class=card_wrapper>' +
+            '<div class=cara_title> %title <div>' +
+            '<div class=card_text> %text </div>' +
+            '</div>'
+        //文字列になってしまうため、変数に置き換える
+        template = template.replace('%title', title_test).replace('%text', text_test);
+
+        
+        //htmlに追加する
+        $("#memoArea").append(template);
+    }
+
     //表示ボタン
     $('.display').on("click", function () {
-        display()
+        display_all()
     })
+
+
 })
