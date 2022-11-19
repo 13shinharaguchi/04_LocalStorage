@@ -4,9 +4,7 @@
 
 #memoArea {
     display: flex;
-    justify-self: center;
-    align-items: center;
-    flex-direction: column;
+    justify-content: space-around;
 }
 
 #title_test {
@@ -34,3 +32,14 @@
 .Select_button {
     display: flex;
 }
+
+.card_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: aquamarine;
+    width: 200px;
+    height: 200px;
+}
+
