@@ -43,3 +43,26 @@
     height: 200px;
 }
 
+.all_display {
+    /* margin-bottom: 10px; */
+    background-color:chocolate;
+}
+
+.under {
+    display: flex;
+    justify-content: space-between;
+}
+
+.record_input{
+    background-color: blue;
+    width: 50%;
+}
+
+.pop_display{
+    background-color: brown;
+    width: 50%;
+}
+
+.card_wrapper{
+    
+}

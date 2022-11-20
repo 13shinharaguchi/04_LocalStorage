@@ -54,15 +54,20 @@ $(function () {
             //     '<textarea class="form-control" calss="text_area_test_i">%s</textarea>' +
             //     '</div>'
             var template =
-                '<div class=card_wrapper>' +
-                '<div class=cara_title> %title <div>' +
-                '<div class=card_text> %text </div>' +
-                '</div>'
+                '<div class=card_wrapper>'
             //文字列になってしまうため、変数に置き換える
-            template = template.replace('%title', title_test).replace('%text', text_test);
+            // template = template.replace('%title', title_test).replace('%text', text_test);
 
+            var text_top = '<div class=card_title> %title'
+            text_top = text_top.replace('%title', title_test)
+
+            var text_under = '<div class=card_text> %text '
+            text_under = text_under.replace('%text', text_test)
             //htmlに追加する
             $("#memoArea").append(template);
+            $(".card_wrapper").append(text_top);
+            $(".card_wrapper").append(text_under);
+
         }
     }
     function display() {
@@ -83,21 +88,36 @@ $(function () {
         //     '<textarea class="form-control" calss="text_area_test_i">%s</textarea>' +
         //     '</div>'
         var template =
-            '<div class=card_wrapper>' +
-            '<div class=cara_title> %title <div>' +
-            '<div class=card_text> %text </div>' +
-            '</div>'
+            '<div class=card_wrapper>' 
         //文字列になってしまうため、変数に置き換える
-        template = template.replace('%title', title_test).replace('%text', text_test);
+        // template = template.replace('%title', title_test).replace('%text', text_test);
 
-        
+        var text_top = '<div class=card_title> %title'
+        text_top = text_top.replace('%title', title_test)
+
+        var text_under = '<div class=card_text> %text '
+        text_under = text_under.replace('%text', text_test)
         //htmlに追加する
         $("#memoArea").append(template);
+        $(".card_wrapper").append(text_top);
+        $(".card_wrapper").append(text_under);
     }
 
     //表示ボタン
     $('.display').on("click", function () {
         display_all()
+    })
+
+    //クリックされたら下に表示する
+    $(document).on("click", '.card_wrapper', function () {
+        let hs = $(this).children('.card_title').text()
+        console.log('タイトルの取得',hs)
+        let sh = $(this).children('.card_text').text()
+        console.log('本文の取得', sh)
+        
+        $("#pop_title").text(hs)
+        $("#pop_text").text(sh)
+
     })
 
 
