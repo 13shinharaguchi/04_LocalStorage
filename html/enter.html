@@ -5,14 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/enter.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
     <title>複数入力</title>
 </head>
 
 <body>
     <div class="all_display">
-        <div id="memoArea"></div>
+        <div id="memoArea">
+        </div>
     </div>
 
     <div class="under">
@@ -23,7 +27,8 @@
             </div>
             <div class="button_area">
                 <div class="Select_button">
-                    <button class="set_local">保存する</button>
+                    <button class="set_local">かける
+                    </button>
                     <button class="display">表示する</button>
                 </div>
                 <button class="remove_local">ストレージ削除</button>
@@ -32,18 +37,28 @@
 
         <div class="pop_display">
             <div id="pop_title">
-    
             </div>
-            <div id="pop_text">
+            <div class="button_editer">
+                <button id="editer">振り返り</button>
+            </div>
+        </div>
+    </div>
 
+    <div class="modal">
+        <div class="modal_window">
+            <div class="modal_contents">
+                <h1>編集ページ</h1>
+                <input type="button" id="onn" value="戻る">
+                <input type="text" id="input_ss">
+                <textarea id="text_area_ss"></textarea>
             </div>
         </div>
     </div>
 
 
-
-
     <script src="/js/enter2.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 </body>
 
 </html>
