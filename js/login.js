@@ -1,29 +1,13 @@
 $(function () {
-    //保存
-    $('.set_local').on("click", function () {
-        const text = $(".text_area").val()
-        localStorage.setItem("memo", text)
+    //ログイン画面
+    $('.login').on("click", function () {
+        let login_pass = $('#pass').val()
+        let local_pass = localStorage.getItem("pass")
+
+        if (login_pass === local_pass) {
+            location.href = '/html/enter.html'
+        } else {
+            $('.error').html('<p>パスワードが違います</p>');
+        }
     })
-
-    //削除
-    $('.remove_local').on("click", function () {
-        //キーを選択して消す
-        // localStorage.removeItem("memo")
-
-        //全消し
-        localStorage.clear()
-    })
-
-    //確認画面に移動する
-    $(".login_button").on("click", function () {
-        location.href = "/html/voice.html"
-    })
-
-    //入力画面に移動する
-    $(".enter_button").on("click", function () {
-        location.href = "/html/enter.html"
-    })
-
-
-
 })

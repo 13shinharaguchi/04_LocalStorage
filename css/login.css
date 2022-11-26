@@ -1,3 +1,21 @@
-.top{
-    margin-bottom: 40px;
+
+
+.login_wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login_container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.error {
+    color: red;
 }

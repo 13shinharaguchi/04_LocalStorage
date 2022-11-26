@@ -1,3 +1,8 @@
+body {
+    margin: 0 0;
+    height: 100vh;
+}
+
 .input_area {
     margin-bottom: 40px;
 }
@@ -9,6 +14,7 @@
 
 #title_test {
     width: 150px;
+
 }
 
 #text_area_test {
@@ -26,11 +32,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column
+    flex-direction: column;
+    padding-top: 40px;
 }
 
 .Select_button {
+    width: 300px;
     display: flex;
+    justify-content: space-between;
 }
 
 .card_wrapper {
@@ -38,31 +47,71 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: aquamarine;
-    width: 200px;
-    height: 200px;
+    background-color: sienna;
+    width: 180px;
+    height: 180px;
 }
 
 .all_display {
     /* margin-bottom: 10px; */
-    background-color:chocolate;
+    background-color: gainsboro;
 }
 
 .under {
     display: flex;
     justify-content: space-between;
+    height: auto;
 }
 
-.record_input{
-    background-color: blue;
+.record_input {
     width: 50%;
 }
 
-.pop_display{
-    background-color: brown;
+.pop_display {
     width: 50%;
 }
 
-.card_wrapper{
-    
+.card_wrapper {}
+
+.modal {
+    display: none;
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal_window {
+    z-index: 2;
+    width: 900px;
+    height: 600px;
+    margin: 3% auto;
+    background-color: floralwhite;
+    display: flex;
+    justify-content: space-between;
+}
+
+#pop_title {}
+
+.title {
+    width: 300px;
+    padding: 10px;
+    margin: 20px 0;
+}
+
+.text_area {
+    width: 300px;
+    height: 400px;
+    padding: 10px;
+}
+
+.button_editer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
